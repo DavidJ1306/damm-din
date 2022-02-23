@@ -1,6 +1,6 @@
 
 #--------------------------------------------------------------------
-# Test the damm algorithm using ATO's table
+# Test the DIN using damm algorithm and ATO's table
 #--------------------------------------------------------------------
 sub damm {
 	my $number = shift;
