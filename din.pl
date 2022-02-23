@@ -4,13 +4,13 @@
 #--------------------------------------------------------------------
 sub damm {
 	my $number = shift;
-	unless ($number =~ m/^\d{15}$/) {					# Must be exactly 15 digits
+	unless ($number =~ m/^\d{15}$/) {		# Must be exactly 15 digits
 		return 'invalid';
 	}
-	unless (substr ($number, 0, 3) eq '036') {			# Must have leading 036
+	unless (substr ($number, 0, 3) eq '036') {	# Must have leading 036
 		return 'invalid';
 	}
-	$number = substr ($number, 3, 12);					# Check remaining 12 digits
+	$number = substr ($number, 3, 12);		# Check remaining 12 digits
     my (@digits) = split ('', $number);
 	my @table = (
         [ qw( 0 9 8 7 6 5 4 3 2 1 ) ],
@@ -28,6 +28,6 @@ sub damm {
     for my $col (@digits) { 
 		$row = $table[$row][$col];
 	}
-    return ( $row eq 0 ) ? 'valid' : 'invalid';			# Non-zero is invalid
+    return ( $row eq 0 ) ? 'valid' : 'invalid';		# Non-zero is invalid
 }
 
