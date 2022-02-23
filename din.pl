@@ -11,7 +11,7 @@ sub damm {
 		return 'invalid';
 	}
 	$number = substr ($number, 3, 12);		# Check remaining 12 digits
-    my (@digits) = split ('', $number);
+  	my (@digits) = split ('', $number);
 	my @table = (
         [ qw( 0 9 8 7 6 5 4 3 2 1 ) ],
         [ qw( 1 0 5 8 7 6 9 4 3 2 ) ],
@@ -27,7 +27,7 @@ sub damm {
     my $row = 0;
     for my $col (@digits) { 
 		$row = $table[$row][$col];
-	}
+    }
     return ( $row eq 0 ) ? 'valid' : 'invalid';		# Non-zero is invalid
 }
 
